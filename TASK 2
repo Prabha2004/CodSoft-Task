@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        .calculator {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+        .calculator-display {
+            font-size: 2rem;
+            text-align: right;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .calculator-keys button {
+            width: 75px;
+            height: 75px;
+            font-size: 1.5rem;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+<div class="container">
+    <div class="calculator">
+        <input type="text" class="form-control calculator-display" id="display" disabled>
+        <div class="calculator-keys">
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="btn btn-secondary" onclick="appendNumber('7')">7</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-secondary" onclick="appendNumber('8')">8</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-secondary" onclick="appendNumber('9')">9</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-warning" onclick="setOperator('/')">÷</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="btn btn-secondary" onclick="appendNumber('4')">4</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-secondary" onclick="appendNumber('5')">5</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-secondary" onclick="appendNumber('6')">6</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-warning" onclick="setOperator('*')">×</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="btn btn-secondary" onclick="appendNumber('1')">1</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-secondary" onclick="appendNumber('2')">2</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-secondary" onclick="appendNumber('3')">3</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-warning" onclick="setOperator('-')">−</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="btn btn-secondary" onclick="appendNumber('0')">0</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-secondary" onclick="appendNumber('.')">.</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-danger" onclick="clearDisplay()">C</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-warning" onclick="setOperator('+')">+</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="btn btn-primary btn-block" onclick="calculateResult()">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Custom JavaScript -->
+<script>
+    let currentNumber = '';
+    let previousNumber = '';
+    let operator = '';
+
+    function appendNumber(number) {
+        currentNumber += number;
+        updateDisplay();
+    }
+
+    function setOperator(op) {
+        if (currentNumber === '') return;
+        if (previousNumber !== '') {
+            calculateResult();
+        }
+        operator = op;
+        previousNumber = currentNumber;
+        currentNumber = '';
+    }
+
+    function calculateResult() {
+        let result;
+        const prev = parseFloat(previousNumber);
+        const current = parseFloat(currentNumber);
+        if (isNaN(prev) || isNaN(current)) return;
+        switch (operator) {
+            case '+':
+                result = prev + current;
+                break;
+            case '-':
+                result = prev - current;
+                break;
+            case '*':
+                result = prev * current;
+                break;
+            case '/':
+                result = prev / current;
+                break;
+            default:
+                return;
+        }
+        currentNumber = result;
+        operator = '';
+        previousNumber = '';
+        updateDisplay();
+    }
+
+    function clearDisplay() {
+        currentNumber = '';
+        previousNumber = '';
+        operator = '';
+        updateDisplay();
+    }
+
+    function updateDisplay() {
+        document.getElementById('display').value = currentNumber;
+    }
+</script>
+</body>
+</html>
