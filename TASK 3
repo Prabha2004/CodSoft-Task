@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John von Neumann Tribute Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        .tribute-page {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            background-color: #2d3748;
+        }
+        .tribute-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .tribute-header img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            border: 4px solid #e2e8f0;
+            background: url("C:/Users/pavan/OneDrive/Pictures/code geass/lelouch emp.jpeg");
+        }
+        .tribute-section {
+            margin-bottom: 20px;
+        }
+        .tribute-section h2 {
+            font-size: 1.75rem;
+            margin-bottom: 15px;
+            color: #63b3ed;
+        }
+        .placeholder {
+            width: 150px;
+            height: 150px;
+            background-color: #4a5568;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="bg-dark text-white">
+
+<div class="container tribute-page">
+    <div class="tribute-header">
+        <div class="d-flex justify-content-center align-items-center">
+            
+            <div>
+                <h1 class="mt-3">John von Neumann</h1>
+                <p class="lead text-gray-400">A Pioneer in Mathematics, Computer Science, and Physics</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tribute-section">
+        <h2>Early Life</h2>
+        <p>John von Neumann was born on December 28, 1903, in Budapest, Hungary. He was a child prodigy, exhibiting extraordinary intellectual abilities from an early age.</p>
+    </div>
+    
+    <div class="tribute-section">
+        <h2>Contributions to Mathematics</h2>
+        <p>Von Neumann made significant contributions to many areas of mathematics, including set theory, functional analysis, and operator theory. His work in the development of the mathematical foundations of quantum mechanics is particularly noteworthy.</p>
+    </div>
+    
+    <div class="tribute-section">
+        <h2>Contributions to Computer Science</h2>
+        <p>John von Neumann is considered one of the founding figures in the field of computer science. He developed the architecture of the modern computer, known as the von Neumann architecture, which is still the basis for most computer designs today.</p>
+    </div>
+    
+    <div class="tribute-section">
+        <h2>Contributions to Physics</h2>
+        <p>Von Neumann's work in physics, particularly in quantum mechanics and statistical mechanics, had a profound impact on the field. His contributions to the development of the atomic bomb during World War II were also significant.</p>
+    </div>
+    
+    <div class="tribute-section">
+        <h2>Awards and Honors</h2>
+        <ul class="list-unstyled">
+            <li>Bôcher Memorial Prize (1938)</li>
+            <li>Enrico Fermi Award (1956)</li>
+            <li>Medal for Merit (1947)</li>
+            <li>Presidential Medal of Freedom (1956)</li>
+        </ul>
+    </div>
+    
+    <div class="tribute-section">
+        <h2>Legacy</h2>
+        <p>John von Neumann's legacy is vast and enduring. His contributions have left an indelible mark on mathematics, computer science, and physics. He passed away on February 8, 1957, but his work continues to influence and inspire scientists and engineers around the world.</p>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
